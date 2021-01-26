@@ -21,6 +21,7 @@ Flask Google Login Sample
 
 * Free software: MIT license
 * Documentation: https://app.readthedocs.io.
+* Real Python Link: https://realpython.com/flask-google-login/
 
 
 Features
