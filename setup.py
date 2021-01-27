@@ -13,11 +13,12 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     'Click>=7.0',
     'requests==2.21.0',
-    'Flask==1.0.2',
+    'Flask==1.1.2',
     'oauthlib==3.0.1',
     'pyOpenSSL==19.0.0',
     'Flask-Login==0.4.1',
-    'Flask-Sqlalchemy',
+    'Flask-Sqlalchemy==2.4.4',
+    'SQLAlchemy==1.3.22',
 ]
 
 setup_requirements = ['pytest-runner', ]
