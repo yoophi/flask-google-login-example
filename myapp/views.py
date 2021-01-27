@@ -84,16 +84,17 @@ def callback():
     else:
         return "User email not available or not verified by Google.", 400
 
-    # Create a user in your db with the information provided
-    # by Google
-    user = User()
-    user.sub = unique_id
-    user.name = users_name
-    user.email = users_email
-    user.profile_pic = picture
 
     # Doesn't exist? Add it to the database.
-    if db.session.query(User).filter(User.sub == unique_id).first() is None:
+    user = db.session.query(User).filter(User.sub == unique_id).first()
+    if user is None:
+        # Create a user in your db with the information provided
+        # by Google
+        user = User()
+        user.sub = unique_id
+        user.name = users_name
+        user.email = users_email
+        user.profile_pic = picture
         db.session.add(user)
         db.session.commit()
 
